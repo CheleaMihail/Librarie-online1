@@ -1,0 +1,70 @@
+﻿<Window x:Class="Librarie_online.Inregistrare_Carte"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Librarie_online"
+        mc:Ignorable="d"
+        Title="Inregistrare_Carte" Height="450" Width="800">
+    <Window.Resources>
+        <ResourceDictionary Source="Dictionar.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/book_wallp.jpg"/>
+        </Grid.Background>
+        <Grid Background="#FF2832A5" Opacity="0.8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.8*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                <ColumnDefinition Width="0.8*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Label Grid.ColumnSpan="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Arial Rounded MT Bold" FontSize="36" Margin="0,0,0,15" FontWeight="Normal" Foreground="White">Înregistrare carte</Label>
+            <Label Grid.Row="1" Grid.Column="0" FontSize="16" Style="{StaticResource labelStyle}">Denumire</Label>
+            <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource labelStyle}">Autor</Label>
+            <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource labelStyle}">Editura</Label>
+            <Label Grid.Row="4" Grid.Column="0" Style="{StaticResource labelStyle}">Limba</Label>
+            <Label Grid.Row="5" Grid.Column="0" Style="{StaticResource labelStyle}">Pret</Label>
+
+            <TextBox x:Name="denumireCarte" Grid.Row="1" Grid.Column="1" Style="{StaticResource textBoxStyle}" LostFocus="denumireCarte_LostFocus"></TextBox>
+            <ComboBox x:Name="autorCarte"  Grid.Row="2" Grid.Column="1" Style="{StaticResource comboBox}">
+                <ComboBoxItem/>
+            </ComboBox>
+            <ComboBox x:Name="edituraCombo" Grid.Row="3" Grid.Column="1" Style="{StaticResource comboBox}"></ComboBox>
+            <TextBox x:Name="limba" Grid.Row="4" Grid.Column="1" Style="{StaticResource textBoxStyle}" LostFocus="limba_LostFocus" />
+            <TextBox x:Name="pret" Grid.Row="5" Grid.Column="1" Style="{StaticResource textBoxStyle}" PreviewTextInput="pret_PreviewTextInput"/>
+
+            <Image x:Name="image" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Width="250" Height="180" Source="Images/incognito.jfif"></Image>
+            <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Vertical" Margin="20,0" >
+                <Button  x:Name="openImage" Click="OpenImage_Click" Margin="20,5" Height="30" Style = "{StaticResource registerButtonStyle}">Search image</Button>
+                <Button  x:Name="openStandartImage" Click="OpenStandartImage_Click" Margin="20,0" Height="30" Style = "{StaticResource registerButtonStyle}">No image</Button>
+            </StackPanel>
+            <Label Grid.Row="1" Grid.Column="3" Style="{StaticResource labelStyle}">Reducere(%)</Label>
+            <Label Grid.Row="2" Grid.Column="3" Style="{StaticResource labelStyle}">Stoc</Label>
+            <Label Grid.Row="3" Grid.Column="3" Style="{StaticResource labelStyle}">Descriere</Label>
+            <Label Grid.Row="4" Grid.Column="3" Style="{StaticResource labelStyle}">Categorie</Label>
+
+            <TextBox x:Name="reducere" Grid.Row="1" Grid.Column="4" Style="{StaticResource textBoxStyle}" PreviewTextInput="reducere_PreviewTextInput" LostFocus="reducere_LostFocus"></TextBox>
+            <TextBox x:Name="stoc" Grid.Row="2" Grid.Column="4" Style="{StaticResource textBoxStyle}" PreviewTextInput="stoc_PreviewTextInput"/>
+            <TextBox x:Name="descriere" Grid.Row="3" Grid.Column="4" TextWrapping="Wrap" AcceptsReturn="True" Style="{StaticResource richBoxStyle}"></TextBox>
+            <Expander Grid.Row="4" Grid.Column="4" Header="Categorii" Foreground="#fff" FontSize="16" FontWeight="Bold" Grid.RowSpan="2" Margin="0,10,0,0">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="0,5,0,0" x:Name="categoriiContainer" Background="#fff">
+                    </StackPanel>
+                </ScrollViewer>
+            </Expander>
+            <Button x:Name="registerButton" Grid.Row="5" Grid.Column="2" Width="150" Height="55" Click="RegisterButton_Click" Style = "{StaticResource registerButtonStyle}">Înregistrare</Button>
+        </Grid>
+    </Grid>
+</Window>

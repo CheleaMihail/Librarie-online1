@@ -1,0 +1,37 @@
+﻿<Window x:Class="Librarie_online.Inregistrare_Autor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Librarie_online"
+        mc:Ignorable="d"
+        Title="Inregistrare_Autor" Height="450" Width="500">
+    <Window.Resources>
+        <ResourceDictionary Source="Dictionar.xaml"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/book_wallp.jpg"/>
+        </Grid.Background>
+        <Grid Background="#FF2832A5" Opacity="0.8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Label Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Arial Rounded MT Bold" FontSize="36" Margin="0,0,0,15" FontWeight="Normal" Foreground="White">Înregistrare autor</Label>
+            <Label Grid.Row="1" VerticalContentAlignment="Center" Margin="20,10" Padding="100,0,0,0" FontSize="16" FontWeight="Bold" Foreground="White">Nume</Label>
+            <Label Grid.Row="2" VerticalContentAlignment="Center" Margin="20,10" Padding="100,0,0,0" FontSize="16" FontWeight="Bold" Foreground="White">Prenume</Label>
+            <TextBox x:Name="numeAutor" Grid.Row="1" Grid.Column="1"  Height="40" Margin="0,0,20,0" LostFocus="numeAutor_LostFocus" Style="{StaticResource textBoxStyle}"/>
+            <TextBox x:Name="prenumeAutor" Grid.Row="2" Grid.Column="1" Height="40" Margin="0,0,20,0" LostFocus="prenumeAutor_LostFocus" Style="{StaticResource textBoxStyle}"/>
+            <Button x:Name="autorRegisterButton" Grid.Row="3" Grid.ColumnSpan="2" Width="150" Height="45" FontSize="18" Click="autorRegisterButton_Click" Style="{StaticResource registerButtonStyle}">Înregistrare
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
